@@ -1,0 +1,51 @@
+name: CI/CD for React App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Verify build output (Debug)
+        run: |
+          echo "Build output:"
+          ls -R ./dist
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Verify VERCEL_TOKEN
+        run: |
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "Error: VERCEL_TOKEN is not set!"
+            exit 1
+          else
+            echo "VERCEL_TOKEN is properly set."
+          fi
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          vercel --prod --yes --token $VERCEL_TOKEN --cwd ./dist
