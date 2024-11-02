@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  gap: 100px;
 `;
 
 export const MiniHeader = styled.div`
