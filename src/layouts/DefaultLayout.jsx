@@ -1,11 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { Footer } from "@components/layout/footer/Footer";
 
 const DefaultLayout = () => {
+  const location = useLocation();
+
+  const isRoot = location.pathname === "/";
+
   return (
     <>
       <Wrapper>
         <Outlet />
+        {!isRoot && <Footer />}
       </Wrapper>
     </>
   );
@@ -13,7 +19,6 @@ const DefaultLayout = () => {
 
 const Wrapper = styled.section`
   flex-grow: 1;
-  background-color: ${({ theme }) => theme.colors.white};
   min-height: 100vh;
 `;
 

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import backgroundImage from "/images/BackgroundImage.svg";
 
 const GlobalStyle = createGlobalStyle`
 *{box-sizing:border-box}
@@ -24,6 +25,12 @@ i {font-style:normal}
 	min-height: 100vh;
 }
 
+@font-face {
+	font-family: "GowunDodum";
+	src: url("/fonts/GowunDodum.ttf") format("truetype");
+}
+
+
 // 초기 html 설정
 html {
 	/* background-color: ${({ theme }) => theme.colors.fall};	 */
@@ -34,21 +41,18 @@ html {
 	-webkit-touch-callout: none;
     -webkit-tap-highlight-color:rgb(0 0 0 / 0%);
     scroll-behavior: smooth; 
-
-	@media (max-width: 360px) {
-		font-size:12px;
-	}
 }
 
 body {
 	width: 100%;
-	max-width: 540px;
+	max-width: 428px;
 	overflow-x: hidden;
+	background: url(${backgroundImage}) no-repeat center center fixed;
+	background-size: cover;
 	background-color: ${({ theme }) => theme.colors.white};
 	color: ${({ theme }) => theme.colors.default};
 	font-family: "sans-serif";
 }
-
 `;
 
 export default GlobalStyle;
