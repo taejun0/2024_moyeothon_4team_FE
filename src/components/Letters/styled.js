@@ -63,6 +63,14 @@ export const Section = styled.div`
   gap: 20px;
 `;
 
+export const Rowing = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  gap: 4px;
+  justify-content: space-around;
+`;
+
 export const MainText = styled.div`
   color: ${({theme}) => theme.colors.black};
 
@@ -82,14 +90,6 @@ export const Buttons = styled.div`
   justify-content: space-between;
 
   cursor: pointer;
-`;
-
-export const Rowing = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 60%;
-  gap: 4px;
-  justify-content: space-around;
 `;
 
 export const CustomDatePicker = styled(DatePicker)`

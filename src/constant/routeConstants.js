@@ -1,6 +1,8 @@
 // src/constants/routeConstants.js
 export const ROUTE_PATHS = {
-  LOGIN: "/",
+  INTRO: "/",
+  LOGIN: "/login",
+  SIGNUP: "/signup",
   HOME: "/homepage",
   ABOUT: "/about",
   LETTER: "/letter",

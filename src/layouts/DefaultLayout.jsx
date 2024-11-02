@@ -5,7 +5,7 @@ import { Footer } from "@components/layout/footer/Footer";
 const DefaultLayout = () => {
   const location = useLocation();
 
-  const isRoot = location.pathname === "/";
+  const isRoot = location.pathname === "/" || location.pathname === "/login" || location.pathname === "/signup";
 
   return (
     <>
