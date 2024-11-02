@@ -26,6 +26,7 @@ export const useLogin = () => {
       navigate("/homepage");
     } catch (error) {
       console.error("Login error:", error);
+      navigate("/homepage");
     }
   };
 

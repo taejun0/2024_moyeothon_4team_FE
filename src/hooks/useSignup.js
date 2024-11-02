@@ -35,6 +35,7 @@ export const useSignup = () => {
       navigate("/homepage");
     } catch (error) {
       console.error("회원 가입 에러:", error);
+      navigate("/homepage");
     }
   };
 
