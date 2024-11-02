@@ -8,15 +8,25 @@ import { NotFoundLayout } from "@layouts/NotFoundLayout";
 import { LetterMakePage } from "@pages/LetterMakePage/LetterMakePage";
 import { LetterInventoryPage } from "@pages/LetterInventoryPage/LetterInventoryPage";
 import { LoginPage } from "@pages/LoginPage/LoginPage";
+import { IntroPage } from "@pages/introPage/IntroPage";
+import { SignupPage } from "@pages/signupPage/SignupPage";
 
 export const router = createBrowserRouter([
   {
-    path: ROUTE_PATHS.LOGIN,
+    path: ROUTE_PATHS.INTRO,
     element: <DefaultLayout />,
     children: [
       {
+        path: ROUTE_PATHS.INTRO,
+        element: <IntroPage />
+      },
+      {
         path: ROUTE_PATHS.LOGIN,
         element: <LoginPage />,
+      },
+      {
+        path: ROUTE_PATHS.SIGNUP,
+        element: <SignupPage />,
       },
       {
         path: ROUTE_PATHS.HOME,

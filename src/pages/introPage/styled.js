@@ -10,16 +10,24 @@ export const Wrapper = styled.div`
   gap: 50px;
 `;
 
-export const MakeLetter = styled.div`
+export const MainText = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
 
-  cursor: pointer;
-  
   font-family: ${({theme}) => theme.fonts.GowunDodum["font-family"]};
   color: ${({theme}) => theme.colors.black};
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 400;
   font-style: normal;
+`;
+
+export const Login = styled.div`
+  display: flex;
+
+  cursor: pointer;
+
+  font-family: ${({theme}) => theme.fonts.GowunDodum["font-family"]};
+  color: ${({theme}) => theme.colors.black};
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal
 `;
