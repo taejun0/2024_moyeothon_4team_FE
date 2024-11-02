@@ -16,14 +16,14 @@ const StyledLetterPaper = styled.div`
 `;
 
 const LetterPaper = ({ letter, onClick }) => {
-  const { letter: letterContent, sendAt } = letter;
+  const { letter: letterContent, sendAt, type } = letter;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const sendDate = new Date(sendAt);
   const currentDate = new Date();
 
   const handleClick = () => {
-    if (sendDate > currentDate) {
-      onClick("이 편지는 아직 열 수 없습니다.");
+    if (type === "received" && sendDate > currentDate) {
+      onClick("이 편지는 아직 열 수 없습니다."); // 받은 편지 중 미래의 편지는 열 수 없음
     } else {
       setIsModalOpen(true);
     }
@@ -36,13 +36,12 @@ const LetterPaper = ({ letter, onClick }) => {
   return (
     <>
       <StyledLetterPaper onClick={handleClick}>
-        {sendDate > currentDate ? "비공개 편지" : letterContent}
+        {type === "received" && sendDate > currentDate ? "비공개 편지" : letterContent}
       </StyledLetterPaper>
       {isModalOpen && (
         <Modal onClose={closeModal}>
           <h2>편지 내용</h2>
           <p>{letterContent}</p>
-          <button onClick={closeModal}>닫기</button>
         </Modal>
       )}
     </>
