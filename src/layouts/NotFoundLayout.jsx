@@ -15,7 +15,6 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  background-color: ${({ theme }) => theme.colors.white};
   min-height: 100vh;
 `;
 

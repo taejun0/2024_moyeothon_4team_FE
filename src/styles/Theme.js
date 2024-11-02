@@ -15,12 +15,12 @@ export const theme = {
   colors: {
     default: "#000000",
     white: "#FFFFFF",
+    black: "#000000",
   },
 
   fonts: {
-    default: fontGenerator("Pretendard-Ragular", "1rem", "400", "1.5", "normal"),
+    default: fontGenerator("GowunDodum", "1rem", "400", "1.5", "normal"),
 
-    // Apple SD 산돌고딕 Neo 폰트 설정
-    Pretendard_Bold: fontGenerator("Pretendard-Bold"),
+    GowunDodum: fontGenerator("GowunDodum"),
   },
 };
